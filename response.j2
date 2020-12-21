@@ -1,0 +1,33 @@
+# HELP srcds_up is the gameserver reachable
+# TYPE srcds_up gauge
+srcds_up{server="{{target}}"} 1
+
+# HELP srcds_players the number of players currently on the server
+# TYPE srcds_players gauge
+srcds_players{server="{{target}}"} {{players}}
+
+# HELP srcds_maxplayers the maximum number of players on the server
+# TYPE srcds_maxplayers gauge
+srcds_maxplayers{server="{{target}}"} {{max_players}}
+
+# HELP srcds_bots the number of bots on the server
+# TYPE srcds_bots gauge
+srcds_bots{server="{{target}}"} {{bots}}
+
+{%if cpu is defined%}
+# HELP srcds_cpu currently unknown
+# TYPE srcds_cpu gauge
+srcds_cpu{server="{{target}}"} {{cpu}}
+{% endif %}
+
+{%if memory is defined%}
+# HELP srcds_memory currently unknown
+# TYPE srcds_memory gauge
+srcds_memory{server="{{target}}"} {{memory}}
+{% endif %}
+
+{%if storage is defined%}
+# HELP srcds_storage currently unknown
+# TYPE srcds_storage gauge
+srcds_storage{server="{{target}}"} {{storage}}
+{% endif %}
