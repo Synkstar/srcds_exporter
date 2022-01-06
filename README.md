@@ -1,5 +1,5 @@
 # srcds_exporter
-A exports that gets data from game servers using a2s_info queries.
+An exporter that gets data from game servers using a2s_info queries.
 My reason for making this is all of the other ones I could find used source rcon and I don't want to see the stats command being ran over and over.
 
 This is a flask app so it can be ran behind many things. I would recommend not exposing this to the internet and instead run it on a secure closed off network. Same with anything else monitoring related really.
